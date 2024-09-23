@@ -55,6 +55,8 @@ Check the current directory using the command,
 ```bash
 pwd
 ```
+Note: Make the changes in the file paths in the python css and html files.    
+
 If your current directory is your desired directory, then run the application using, 
 
 ```
