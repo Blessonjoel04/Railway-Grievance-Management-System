@@ -1,0 +1,353 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('istockphoto-1485287542-612x612.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+   background-color: rgba(255, 255, 255, 0.8);
+    padding-left: 220px;
+    color: black;
+    text-align: left;
+}
+
+.header-content {
+    display: inline-block;
+    text-align: center;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    width: 100px;
+    height: 50px;
+    z-index: 10;
+}
+
+header h1 {
+    margin: 20px 0;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: cursive;
+}
+
+main {
+    display: flex;
+    padding: 20px;
+    color: white;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    margin-right: 20px;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-options a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-options a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.grievance-form {
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.grievance-form h2 {
+    margin-top: 0;
+    color: #ffcc00;
+}
+
+.grievance-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.grievance-form label {
+    margin-bottom: 5px;
+}
+
+.grievance-form input,
+.grievance-form select,
+.grievance-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.grievance-form input[type="text"],
+.grievance-form input[type="datetime-local"],
+.grievance-form select,
+.grievance-form textarea {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.grievance-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.mobile-input {
+    display: flex;
+    gap: 10px;
+}
+
+.mobile-input input {
+    flex: 1;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.form-buttons button {
+    background-color: #ffcc00;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-buttons button:hover {
+    background-color: #ff9900;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#chatbot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.glowing-image {
+    width: 60px;
+    height: 60px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.glowing-image:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.chatbot-button {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.chatbot-button:hover {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+}
+
+.chatbot-popup {
+    display: none;
+    position: fixed;
+    top: 30%; /* Positioned slightly below the center */
+    right: 0;
+    width: 25%;
+    height: 70%; /* Adjust height if necessary */
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    overflow: hidden;
+}
+
+.chatbot-popup iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.tab-bar {
+    display: flex;
+    justify-content: left;
+    background-color: #333;
+    width: 100%;
+}
+
+.tab-bar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: left;
+}
+
+.tab-bar a:hover {
+    background-color: #575757;
+}
+
+.tab-bar {
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0;
+    box-sizing: border-box;
+}
+
+.auth-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.auth-buttons button {
+    background-color: #ffcc00;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.auth-buttons button:hover {
+    background-color: #ff9900;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.popup-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.popup h2 {
+    margin-bottom: 15px;
+}
+
+.popup label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.popup input[type="text"],
+.popup input[type="password"],
+.popup button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.popup button[type="submit"] {
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.popup button[type="submit"]:hover {
+    background-color: #ff9900;
+}
+
+/* Add this CSS for the login popup */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 1000;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the popup */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}

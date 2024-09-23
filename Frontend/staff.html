@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Page</title>
+    <link rel="stylesheet" href="static/css/staff_style.css">
+    <script>
+        function loadDashboard() {
+            window.open('https://app.powerbi.com/reportEmbed?reportId=35336998-b6dd-4f01-aa60-1c5854625c52&autoAuth=true&ctid=6c94e077-929a-46b2-a642-8763ee68726c', '_blank');
+        }
+
+        function loadChatbot() {
+            document.getElementById('chatbot-frame').style.display = 'block';
+            document.getElementById('close-btn').style.display = 'block';
+            document.querySelector('.container').classList.add('move-up');
+        }
+
+        function closeContent() {
+            document.getElementById('chatbot-frame').style.display = 'none';
+            document.getElementById('close-btn').style.display = 'none';
+            document.querySelector('.container').classList.remove('move-up');
+        }
+    </script>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <!-- Profile and Logout buttons in the top-right corner -->
+    <div class="top-right-buttons">
+        <img src="static/pro.jpeg" alt="Profile" class="profile-button" onclick="window.location.href='profile.html'">
+        <button class="logout-button" onclick="window.location.href='logout.html'">Logout</button>
+    </div>
+
+    <div class="container">
+        <h1>Hello Blesson</h1>
+        <div class="buttons">
+            <button onclick="loadChatbot()">Chat with AI</button>
+            <button onclick="loadDashboard()">View Dashboard</button>
+        </div>
+    </div>
+
+    <!-- Iframe to load chatbot -->
+    <iframe id="chatbot-frame" title="Chatbot" width="800" height="600" src="https://aichatbot.sendbird.com/playground/index.html?app_id=BE42ABC8-CACE-4490-AF35-D8DB6FC69ACA&bot_id=onboarding_bot&region=ap-8" frameborder="0" allowfullscreen></iframe>
+
+    <!-- Close button for chatbot -->
+    <img id="close-btn" src="static\xmark.jpeg" alt="Close" onclick="closeContent()">
+</body>
+</html>

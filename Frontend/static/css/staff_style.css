@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('istockphoto-1485287542-612x612.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: white;
+    flex-direction: column;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.top-right-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+.profile-button {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.profile-button:hover {
+    transform: scale(1.1);
+}
+
+.logout-button {
+    font-size: 16px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+    max-width: 500px;
+    width: 100%;
+    transition: transform 0.5s ease-in-out; /* Smooth transition for the movement */
+}
+
+.move-up {
+    transform: translateY(-200px); /* Adjust this value to move the container upwards */
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between the buttons */
+}
+
+.buttons button {
+    font-size: 18px;
+    padding: 12px 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #28a745;
+    color: white;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.buttons button:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Slightly enlarges button on hover */
+}
+
+.buttons button:active {
+    background-color: #1e7e34;
+    transform: scale(0.98); /* Slightly shrinks button on click */
+}
+
+#chatbot-frame {
+    display: none;
+    position: fixed;
+    top: 60%; /* Positioned slightly below the center */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centered horizontally and adjusted vertically */
+    width: 50%; /* Adjust width as needed */
+    height: 50%; /* Adjust height as needed */
+    z-index: 2;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+#close-btn {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 3;
+}

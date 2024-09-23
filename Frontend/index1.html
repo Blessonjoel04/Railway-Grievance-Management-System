@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <script src="static/js/scripts.js" defer></script>
+    <style>
+        .chatbot-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            height: 400px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            z-index: 1000;
+        }
+
+        .chatbot-popup iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .chatbot-button {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+        }
+
+        .close-btn {
+            font-size: 24px;
+            cursor: pointer;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Rail Madad</h1>
+            <div class="logo">
+                <img src="static/Railwa-logo.jpg" alt="Rail Madad Logo" class="logo">
+            </div>
+            <div class="auth-buttons">
+                <button id="loginBtn">Login</button>
+                <button id="signupBtn">Sign Up</button>
+            </div>
+        </div>
+        <div class="tab-bar">
+            <a href="https://www.irctc.co.in/nget/train-search" target="_blank">Ticket Booking</a>
+            <a href="https://enquiry.indianrail.gov.in/mntes/" target="_blank">Train Enquiry</a>
+            <a href="https://www.indianrail.gov.in/enquiry/StaticPages/StaticEnquiry.jsp?StaticPage=index.html" target="_blank">Reservation Enquiry</a>
+            <a href="https://rr.irctc.co.in/home#/home" target="_blank">Retiring Room Booking</a>
+            <a href="https://indianrailways.gov.in/" target="_blank">Indian Railways</a>
+            <a href="https://play.google.com/store/apps/details?id=com.cris.utsmobile&hl=en_IN" target="_blank">UTS Ticketing</a>
+            <a href="https://www.fois.indianrail.gov.in/RailSAHAY/index.jsp" target="_blank">Freight Business</a>
+            <a href="https://parcel.indianrail.gov.in/" target="_blank">Railway Parcel Website</a>
+        </div>
+
+        <div class="chatbot-container">
+            <img src="static/chatbot.jpg" alt="Chatbot" class="chatbot-button" id="chatbotButton">
+        </div>
+
+        <div class="chatbot-popup" id="chatbotPopup">
+            <iframe src="https://aichatbot.sendbird.com/playground/index.html?app_id=BE42ABC8-CACE-4490-AF35-D8DB6FC69ACA&bot_id=onboarding_bot&region=ap-8" frameborder="0"></iframe>
+        </div>
+    </header>
+
+    <main>
+        <section class="sidebar">
+            <div class="sidebar-options">
+                <a href="/">Train Issue</a>
+                <a href="/station_issue_grievance">Station Issue</a>
+            </div>
+        </section>
+
+        <section class="grievance-form">
+            <h2>USER COMPLAINT - Grievance Detail</h2>
+            <form action="/submit" method="post" enctype="multipart/form-data">
+                <label for="mobile">Mobile No.</label>
+                <div class="mobile-input">
+                    <input type="text" id="mobile" name="mobile" required>
+                    <button type="button" onclick="getOTP()">Get OTP</button>
+                </div>
+                
+                <label for="pnr">Journey Details (PNR No.)</label>
+                <input type="text" id="pnr" name="pnr" placeholder="PNR No.">
+                
+                <label for="type">Type</label>
+                <select id="type" name="type" required>
+                    <option value="">--Select--</option>
+                    <option value="Medical Assistance">Medical Assistance</option>
+                    <option value="Security">Security</option>
+                    <option value="Facilities for Women with Special Needs">Facilities for Women with Special Needs</option>
+                    <option value="Unreserved Ticketing">Unreserved Ticketing</option>
+                    <option value="Luggage/Parcels">Luggage/Parcels</option>
+                    <option value="Reserved Ticketing">Reserved Ticketing</option>
+                    <option value="Refund of Tickets">Refund of Tickets</option>
+                    <option value="Passenger Amenities">Passenger Amenities</option>
+                    <option value="Electrical Equipment">Electrical Equipment</option>
+                    <option value="Staff Behaviour">Staff Behaviour</option>
+                    <option value="Cleanliness">Cleanliness</option>
+                    <option value="Catering & Vending Services">Catering & Vending Services</option>
+                    <option value="Water Availability">Water Availability</option>
+                    <option value="Goods">Goods</option>
+                    <option value="Corruption/Bribery">Corruption/Bribery</option>
+                    <option value="Miscellaneous">Miscellaneous</option>
+                </select>
+
+                <label for="sub-type">Sub Type</label>
+                <input type="text" id="sub-type" name="sub_type" placeholder="Sub Type">
+
+                <label for="incident-date">Incident Date</label>
+                <input type="datetime-local" id="incident-date" name="incident_date" required>
+
+                <label for="file-upload">Upload File</label>
+                <input type="file" id="file-upload" name="file">
+
+                <label for="description">Grievance Description</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <div class="form-buttons">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    
+    <!-- Login Popup -->
+    <div class="popup" id="loginPopup">
+        <div class="popup-content">
+            <span class="close-btn" id="loginClose">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm" action="/login" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
