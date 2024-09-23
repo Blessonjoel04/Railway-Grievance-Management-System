@@ -30,13 +30,7 @@ Visnu Sanjay Kumar P - https://github.com/vishnu24102005
 Nishaa R - https://github.com/Nishaa10  
 Karpaga Mithuna S - https://github.com/mithuna357
 
-## Contributers
-Sam Robin Singh E - https://github.com/SamRobinSingh
-Visnu Sanjay Kumar P - https://github.com/vishnu24102005
-Nishaa R - https://github.com/Nishaa10
-Karpaga Mithuna S - https://github.com/mithuna357
-
-## Deployment
+# Deployment
 
 To deploy this project run
 
