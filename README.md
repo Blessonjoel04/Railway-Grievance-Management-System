@@ -5,7 +5,7 @@ A brief description of what this project does and who it's for
 
 This Project is a web-based application designed to streamline and automate the process of handling grievances related to railway services. It integrates various technologies to classify and manage user complaints efficiently.
 
-Features:
+Features:   
 Complaint Classification: Utilizes machine learning models to classify user complaints into predefined categories.
 
 User-Friendly Interface: Developed with HTML, CSS, and JavaScript to ensure a responsive and intuitive user experience.
